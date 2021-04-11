@@ -10,32 +10,31 @@
           <a class="links-navbar" href="/">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="links-navbar" href="{% url 'display' %}">Find Turfs</a>
+          <a class="links-navbar" href="">Find Turfs</a>
         </li>
         <li class="nav-item">
-          <a class="links-navbar" href="{% url 'gallery' %}">Gallery</a>
+          <a class="links-navbar" href="">Gallery</a>
         </li>
-        {% if user.is_authenticated %}
+        
           <li class="nav-item" >
-            <a class="links-navbar" href="{% url 'turfdetails' %}" >Partner With Us</a>
+            <a class="links-navbar" href="" >Partner With Us</a>
           </li>
           <li class="nav-item" >
-            <a class="links-navbar" href="{% url 'myaccount' %}" >My account</a>
+            <a class="links-navbar" href="" >My account</a>
           </li>
           <li class="nav-item" >
-            <a class="links-navbar" href="{% url 'myturfs' %}" >My Bookings/Turfs</a>
+            <a class="links-navbar" href="" >My Bookings/Turfs</a>
           </li>
           <li class="nav-item" >
-            <a class="links-navbar" href="{% url 'logout' %}">Log Out</a>
-          </li>
-        {% else %}
-          <li class="nav-item" >
-            <a class="links-navbar" href="{% url 'login' %}">Log In</a>
+            <a class="links-navbar" href="">Log Out</a>
           </li>
           <li class="nav-item" >
-            <a class="sign-up" href="{% url 'signup' %}">Sign Up</a>
+            <a class="links-navbar" href="">Log In</a>
           </li>
-        {% endif %}
+          <li class="nav-item" >
+            <a class="sign-up" href="">Sign Up</a>
+          </li>
+        
       </ul>
     </div>
 </nav>

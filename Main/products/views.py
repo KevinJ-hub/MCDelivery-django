@@ -6,11 +6,11 @@ from .models import Food
 
 
 def home(req, *args, **kwargs):
-    return HttpResponse("Home")
+    return render(req, "base.html")
 
 
 def login(req, *args, **kwargs):
-    return HttpResponse("Login")
+    return render(req, "registeration/login.html")
 
 
 def cart(req, *args, **kwargs):
