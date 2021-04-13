@@ -1,21 +1,23 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import Food
+
+# from django.http import HttpResponse
 
 # Create your views here.
 
 
 def home(req, *args, **kwargs):
-    return render(req, "base.html")
+    obj = list(Food.objects.all())
+    return render(req, "home.html", {"obj": obj})
 
 
 def login(req, *args, **kwargs):
-    return render(req, "registration/login.html")
+    return render(req, "login.html")
 
 
 def cart(req, *args, **kwargs):
-    return HttpResponse("Cart")
+    return render(req, "cart.html")
 
 
 def profile(req, *args, **kwargs):
-    return HttpResponse("Profile")
+    return render(req, "profile.html")

@@ -1,0 +1,61 @@
+.items_container {
+    padding: 2% 8% 0 8%;
+    display: flex;
+    flex-direction: column;
+}
+
+.items_container .item {
+    padding: 1%;
+    flex: 1;
+    max-height: 20%;
+    margin: 0.4%;
+    border: 0.1mm solid black;
+    display: grid;
+    grid-template-columns: 25% 5% 50% 20%;
+}
+
+.items_container .item .thumbnail {
+    width: 80%;
+    grid-row: 1/ span 2;
+}
+
+.items_container .item .veg {
+    grid-column: 2;
+    grid-row: 1/ span 2;
+}
+
+.items_container .item h2, .items_container .item p {
+    margin: 0;
+    grid-column: 3;
+}
+
+.items_container .item h2 {
+    grid-row: 1;
+}
+
+.items_container .item p {
+    grid-row: 2;
+}
+
+.items_container .item h3 {
+    font-weight: normal;
+    margin: 0;
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.items_container .item .AddToCart {
+    padding: 5%;
+    background-color: rgb(255, 196, 0);
+    border: none;
+    max-height: 40%;
+    width: 40%;
+    border-radius: 10px;
+    grid-column: 4;
+    grid-row: 2;
+}
+
+.items_container .item .AddToCart:hover {
+    background-color: rgb(255, 175, 0);
+    cursor: pointer;
+}

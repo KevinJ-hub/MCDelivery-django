@@ -1,39 +1,13 @@
-<nav class="navbar navbar-expand-lg navbar-bg-color">
-  <a class="navbar-brand-r" href="/">Book My Turf</a>
-  <button class="navbar-toggler" type="button" id="clicker">
-    <i class="fa fa-bars" style="color: white;font-size: 30px;"></i>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-itemn active">
-        <a class="links-navbar" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="links-navbar" href="">Find Turfs</a>
-      </li>
-      <li class="nav-item">
-        <a class="links-navbar" href="">Gallery</a>
-      </li>
+<nav class="top_navbar">
+  <ul>
+    <li><a href={% url 'home' %}>Home</a></li>
 
-      <li class="nav-item">
-        <a class="links-navbar" href="">Partner With Us</a>
-      </li>
-      <li class="nav-item">
-        <a class="links-navbar" href="">My account</a>
-      </li>
-      <li class="nav-item">
-        <a class="links-navbar" href="">My Bookings/Turfs</a>
-      </li>
-      <li class="nav-item">
-        <a class="links-navbar" href="">Log Out</a>
-      </li>
-      <li class="nav-item">
-        <a class="links-navbar" href="">Log In</a>
-      </li>
-      <li class="nav-item">
-        <a class="sign-up" href="">Sign Up</a>
-      </li>
+    {% if user.is_authenticated %}
+    <li class="right"><a href={% url 'profile' %}>{{ request.user.username }}</a></li>
+    {% else %}
+    <li class="right"><a href={% url 'login' %}>Login / Register</a></li>
+    {% endif %}
 
-    </ul>
-  </div>
+    <li class="right"><a href={% url 'cart' %}><i class="fa fa-shopping-cart"></i></a></li>
+  </ul>
 </nav>
