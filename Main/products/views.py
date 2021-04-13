@@ -10,7 +10,7 @@ def home(req, *args, **kwargs):
 
 
 def login(req, *args, **kwargs):
-    return render(req, "registeration/login.html")
+    return render(req, "registration/login.html")
 
 
 def cart(req, *args, **kwargs):
