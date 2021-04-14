@@ -6,6 +6,17 @@
 
     {{ registration_form.as_p }}
 
+    <!-- To avoid the instructions you can use this commented code below instead of as_p Kaushal -->
+    <!-- And add the password ka instrcutions by yourself -->
+    {% comment %}
+
+    {% for fields in registration_form %}
+    <p>{{ fields.label_tag }}
+        {{ fields }}</p>
+    {% endfor %}
+
+    {% endcomment %}
+
     <button type="submit">Register</button>
     <h4>{{ error }}</h4>
 

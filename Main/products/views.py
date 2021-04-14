@@ -2,9 +2,6 @@ from django.shortcuts import render, redirect
 from .models import Food, Cart
 from account.models import my_user
 
-
-# from django.http import HttpResponse
-
 # Create your views here.
 
 
@@ -14,22 +11,16 @@ def home(req, *args, **kwargs):
     if req.POST:
         if str(req.user) != "AnonymousUser":
             curr_user = my_user.objects.get(username=req.user)
-
-            # print(curr_user.id, req.POST.get("prod_id"))
             cart_details = {
                 "user": curr_user.id,
                 "food": req.POST.get("prod_id"),
-                "qty": 1
+                "qty": 1,
             }
             Cart.objects.create(**cart_details)
             msg = "Added to cart"
         else:
-            return redirect("register")
+            return redirect("login")
     return render(req, "home.html", {"obj": obj, "msg": msg})
-
-
-def login(req, *args, **kwargs):
-    return render(req, "login.html")
 
 
 def cart(req, *args, **kwargs):
@@ -60,7 +51,7 @@ def cart(req, *args, **kwargs):
             bill_amt += food_item.price
             data.append(food_item_obj)
     else:
-        return redirect("register")
+        return redirect("login")
     return render(req, "cart.html", {"data": data, "bill": bill_amt})
 
 

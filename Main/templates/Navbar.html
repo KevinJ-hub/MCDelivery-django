@@ -3,6 +3,7 @@
     <li><a href={% url 'home' %}>Home</a></li>
 
     {% if user.is_authenticated %}
+    <li class="right"><a href={% url "logout" %}>Logout</a></li>
     <li class="right"><a href={% url 'profile' %}>{{ request.user.username }}</a></li>
     {% else %}
     <li class="right"><a href={% url 'login' %}>Login / Register</a></li>
