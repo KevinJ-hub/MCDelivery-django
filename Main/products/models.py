@@ -10,9 +10,3 @@ class Food(models.Model):
     image = models.URLField(max_length=200, blank=False)
     veg = models.BooleanField(blank=False)
 
-
-class User(models.Model):
-    username = models.CharField(blank=False, max_length=15)
-    password = models.CharField(blank=False, max_length=50)
-    email = models.EmailField(blank=False, max_length=254)
-    address = models.TextField(blank=False)

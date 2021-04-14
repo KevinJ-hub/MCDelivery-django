@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}MCD | Register{% endblock title %}
+{% block page_content %}
+<h2>Registration form</h2>
+<form method="POST">{% csrf_token %}
+
+    {{ registration_form.as_p }}
+
+    <button type="submit">Register</button>
+    <h4>{{ error }}</h4>
+
+
+</form>
+{% endblock page_content %}

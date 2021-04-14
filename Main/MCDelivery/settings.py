@@ -23,9 +23,9 @@ print(os.path.join(BASE_DIR, "templates"))
 SECRET_KEY = "django-insecure-l*4sjjts$-j9vm$m9t-@#(#f3$6s--a+da9d(f=gwzog_8sx&!"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "products",
+    "account",
 ]
 
 MIDDLEWARE = [
