@@ -1,6 +1,5 @@
 from django.contrib.auth.forms import UsernameField
 from django.db import models
-from products.models import Food
 
 
 class my_user(models.Model):
@@ -9,3 +8,4 @@ class my_user(models.Model):
     email = models.EmailField(blank=False, max_length=254, unique=True)
     password = models.CharField(blank=False, max_length=50)
     # user_cart = models.ManyToManyField()
+

@@ -5,12 +5,13 @@
 {% block linking %}
 <link rel="stylesheet" href="http://static.sasongsmat.nu/fonts/vegetarian.css">
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="{% static 'css\home.css' %}">
 {% endblock linking %}
 
 
 {% block page_content %}
 <div class="items_container">
+    <h1>{{ msg }}</h1>
     {% for item in obj %}
     <div class="item">
         <img class="thumbnail" src={{ item.image }} alt="{{ item.title }} thumbnail">
@@ -21,10 +22,21 @@
             <img src="https://img.icons8.com/color/48/000000/non-vegetarian-food-symbol.png" style="width: 22px;">
             {% endif %}
         </div>
-        <h2>{{ item.title }}</h2>
-        <p>{{ item.desc }}</p>
-        <h3><span> &#8377; </span> {{ item.price }}</h3>
-        <button class="AddToCart" type="button">ADD</button>
+        <form method="POST">
+            {% csrf_token %}
+        
+            <h2>{{ item.title }}</h2>
+
+            <input type="text" name="title" value="{{ item.title }}" style="display: none;">
+            <input type="text" name="price" value="{{ item.price }}" style="display: none;">
+            <input type="text" name="prod_id" value="{{ item.id }}" style="display: none;">
+
+            <p>{{ item.desc }}</p>
+            <h3><span> &#8377; </span> {{ item.price }}</h3>
+            <button class="AddToCart" type="submit">
+                ADD
+            </button>
+        </form>
     </div>
     {% endfor %}
 </div>
