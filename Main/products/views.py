@@ -34,8 +34,15 @@ def login(req, *args, **kwargs):
 
 def cart(req, *args, **kwargs):
     if str(req.user) != "AnonymousUser":
-        curr_user = my_user.objects.get(username=req.user)
 
+        # Delete
+        if req.POST:
+            instance = Cart.objects.filter(id=req.POST.get("prod_id"))
+            print("id:", req.POST.get("prod_id"))
+            instance.delete()
+
+        # Display
+        curr_user = my_user.objects.get(username=req.user)
         objs = Cart.objects.filter(user=curr_user.id)
 
         data = []
@@ -47,7 +54,8 @@ def cart(req, *args, **kwargs):
                 "title": food_item.title,
                 "price": food_item.price,
                 "image": food_item.image,
-                "veg": food_item.veg
+                "veg": food_item.veg,
+                "id": i.id,
             }
             bill_amt += food_item.price
             data.append(food_item_obj)
