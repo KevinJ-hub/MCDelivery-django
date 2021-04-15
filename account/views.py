@@ -48,3 +48,7 @@ def login_view(req, *args, **kwargs):
 def logout_view(req, *args, **kwargs):
     logout(req)
     return redirect("home")
+
+
+def profile_view(request, *args, **kwargs):
+    return render(request, "profile.html")

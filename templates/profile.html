@@ -1,2 +1,30 @@
 {% extends 'base.html' %}
 {% block title %}MCD | Profile{% endblock title %}
+
+{% block linking %}
+<link rel="stylesheet" href="http://static.sasongsmat.nu/fonts/vegetarian.css">
+{% load static %}
+<link rel="stylesheet" href="{% static 'css\profile.css' %}">
+{% endblock linking %}
+
+{% block page_content %}
+<div id="grids">
+    <div id="image"> <img
+            src="https://www.outsystems.com/Forge_CW/_image.aspx/Q8LvY--6WakOw9afDCuuGWx8sLLzB644dIPSIUwO0gc=/randomuser"
+            alt="user image">
+    </div>
+
+    <div id="username">
+        Hello, {{ request.user.username }}
+    </div>
+
+    <div id="email">
+        Your email : {{ request.user.email }}
+    </div>
+
+    <div id="address">
+        Your address : {{ request.user.address }}
+    </div>
+
+</div>
+{% endblock page_content %}

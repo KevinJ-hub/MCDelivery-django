@@ -1,0 +1,47 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#grids {
+    display: grid;
+    width: 70vw;
+    margin-top: 100px;
+    margin-left: 200px;
+    grid-template-columns: 30vw 40vw;
+    grid-template-columns: 10vh*3;
+    grid-template-areas: "image username" "image email" "address address";
+}
+
+#image {
+    border: 1px solid black;
+    border-radius: 50%;
+    grid-area: image;
+    justify-self: center;
+    align-self: center;
+}
+
+img {
+    border-radius: 50%;
+}
+
+#username {
+    grid-area: username;
+    font-size: 50px;
+    justify-self: center;
+    align-self: center;
+}
+
+#email {
+    grid-area: email;
+    font-size: 30px;
+    justify-self: center;
+    align-self: center;
+}
+
+#address {
+    grid-area: address;
+    margin-top: 20px;
+    font-size: 30px;
+    justify-self: center;
+    align-self: center;
+}

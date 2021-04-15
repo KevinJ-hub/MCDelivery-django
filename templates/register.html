@@ -1,25 +1,37 @@
 {% extends 'base.html' %}
 {% block title %}MCD | Register{% endblock title %}
+
+{% block linking %}
+<link rel="stylesheet" href="http://static.sasongsmat.nu/fonts/vegetarian.css">
+{% load static %}
+<link rel="stylesheet" href="{% static 'css\register.css' %}">
+{% endblock linking %}
+
 {% block page_content %}
-<h2>Registration form</h2>
-<form method="POST">{% csrf_token %}
+<!-- <center> -->
+<div>
+    <h2>Registration </h2>
+    <form method="POST">{% csrf_token %}
 
-    {{ registration_form.as_p }}
+        {{ registration_form.as_p }}
 
-    <!-- To avoid the instructions you can use this commented code below instead of as_p Kaushal -->
-    <!-- And add the password ka instrcutions by yourself -->
-    {% comment %}
+        <!-- To avoid the instructions you can use this commented code below instead of as_p Kaushal -->
+        <!-- And add the password ka instructions by yourself -->
+        {% comment %}
 
-    {% for fields in registration_form %}
-    <p>{{ fields.label_tag }}
-        {{ fields }}</p>
-    {% endfor %}
+        {% for fields in registration_form %}
+        <p>{{ fields.label_tag }}
+            {{ fields }}</p>
+        {% endfor %}
 
-    {% endcomment %}
+        {% endcomment %}
+        <center>
+            <button type="submit">Register</button>
+        </center>
+        <!-- <h4>{{ error }}</h4> -->
 
-    <button type="submit">Register</button>
-    <h4>{{ error }}</h4>
 
-
-</form>
+    </form>
+</div>
+<!-- </center> -->
 {% endblock page_content %}
