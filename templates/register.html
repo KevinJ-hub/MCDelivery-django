@@ -8,30 +8,15 @@
 {% endblock linking %}
 
 {% block page_content %}
-<!-- <center> -->
 <div>
     <h2>Registration </h2>
     <form method="POST">{% csrf_token %}
 
         {{ registration_form.as_p }}
-
-        <!-- To avoid the instructions you can use this commented code below instead of as_p Kaushal -->
-        <!-- And add the password ka instructions by yourself -->
-        {% comment %}
-
-        {% for fields in registration_form %}
-        <p>{{ fields.label_tag }}
-            {{ fields }}</p>
-        {% endfor %}
-
-        {% endcomment %}
         <center>
             <button type="submit">Register</button>
         </center>
-        <!-- <h4>{{ error }}</h4> -->
-
 
     </form>
 </div>
-<!-- </center> -->
 {% endblock page_content %}
