@@ -10,8 +10,8 @@
 {% block page_content %}
 <div id="grids">
     <div id="image"> <img
-            src="https://www.outsystems.com/Forge_CW/_image.aspx/Q8LvY--6WakOw9afDCuuGWx8sLLzB644dIPSIUwO0gc=/randomuser"
-            alt="user image">
+            src="https://i.pinimg.com/originals/e1/da/32/e1da32bf0d2958b19ba5a1d3a100d7fb.jpg"
+            alt="user image" id="user-image">
     </div>
 
     <div id="username">
@@ -19,11 +19,11 @@
     </div>
 
     <div id="email">
-        Your email : {{ request.user.email }}
+        <b>Your email :</b> {{ request.user.email }}
     </div>
 
     <div id="address">
-        Your address : {{ request.user.address }}
+        <b>Your address :</b> {{ request.user.address }}
     </div>
 
 </div>

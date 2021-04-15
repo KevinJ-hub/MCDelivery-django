@@ -33,7 +33,7 @@ ul {
     list-style: none;
 }
 
-li {
+form li {
     color: red;
     font-size: 12px;
 }
