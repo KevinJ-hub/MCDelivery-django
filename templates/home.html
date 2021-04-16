@@ -28,14 +28,11 @@
             <form method="POST">
                 {% csrf_token %}
             
-                <h2>{{ item.title }}</h2>
-    
-                <input type="text" name="title" value="{{ item.title }}" style="display: none;">
-                <input type="text" name="price" value="{{ item.price }}" style="display: none;">
-                <input type="text" name="prod_id" value="{{ item.id }}" style="display: none;">
-    
+                <h2>{{ item.title }}</h2>      
                 <p>{{ item.desc }}</p>
                 <h3><span> &#8377; </span> {{ item.price }}</h3>
+
+                <input type="text" name="prod_id" value="{{ item.id }}" style="display: none;">
                 <button class="AddToCart" type="submit">
                     ADD
                 </button>
