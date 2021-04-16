@@ -53,7 +53,3 @@ def cart(req, *args, **kwargs):
     else:
         return redirect("login")
     return render(req, "cart.html", {"data": data, "bill": bill_amt})
-
-
-def profile(req, *args, **kwargs):
-    return render(req, "profile.html")
