@@ -1,6 +1,6 @@
 <center><h1>MCDelivery - Django</h1></center>
 
-<center>The aim of this project is to create the MCDelivery website using Django. The core functionality i.e. User login, logout, registration, cart etc have already been implemented.</center>
+<center>The aim of this project is to create the MCDelivery website using Django. The core functionality i.e. User login, logout, registration, cart etc have already been implemented. Product images used have been taken from <a href="https://www.mcdelivery.co.in/home/">MCD's website</a></center>
 
 ## Project Summary
 
